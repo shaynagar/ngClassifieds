@@ -1,0 +1,4 @@
+install node js
+copy package.json to project folder
+cmd(in project folder):
+npm install
