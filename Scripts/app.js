@@ -1,5 +1,5 @@
 ﻿angular
-    .module("ngClassifieds", ['ngMaterial', 'ui.router'])
+    .module("ngClassifieds", ['ngMaterial', 'ngMessages', 'ui.router'])
     .config(function($mdThemingProvider, $stateProvider, $locationProvider) {
         $mdThemingProvider.theme('default')
             .primaryPalette('teal')
@@ -23,6 +23,11 @@
                 params: {
                     classified: null
                 }
+            })
+            .state('register', {
+                url: '/register',
+                templateUrl: 'components/register/register.tpl.html',
+                controller: 'registerCtrl as vm'
             });
 
         $locationProvider

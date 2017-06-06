@@ -19,3 +19,7 @@
     from {opacity:1;}
     to {opacity:0;}
 }
+
+.registerForm{
+    width:500px;
+}

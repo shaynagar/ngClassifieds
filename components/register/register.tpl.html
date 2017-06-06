@@ -1,0 +1,91 @@
+﻿<md-toolbar>
+    <div class="md-toolbar-tools">
+        <p><strong>ngClassified</strong></p>
+    </div>
+</md-toolbar>
+<div layout="column" ng-cloak class="md-inline-form">
+
+    <md-content layout-padding layout="row" layout-align="center center">
+        <div>
+            <div layout="row" layout-align="center center">
+                <h1>Register</h1>
+            </div>
+            <form name="registerForm" class="registerForm" >
+                
+                <div layout-gt-sm="row">
+                    
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>First Name</label>
+                        <input name="firstName" required ng-model="firstName">
+                        <div ng-messages="registerForm.firstName.$error">
+                            <div ng-message="required">Required</div>
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Last Name</label>
+                        <input name="lastName" required ng-model="lastName">
+                        <div ng-messages="registerForm.lastName.$error">
+                            <div ng-message="required">Required</div>
+                        </div>
+                    </md-input-container>
+
+                </div>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Username</label>
+                    <input name="username" required ng-model="username" ng-pattern="/^[a-zA-Z0-9]{6,16}$/">
+                    <div ng-messages="registerForm.username.$error" multiple>
+                        <div ng-message="required" class="my-message">
+                            Username required
+                        </div>
+                        <div ng-message="pattern" class="my-message">
+                            Username must have 6 to 16 characters
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Password</label>
+                    <input name="password" required ng-model="password" ng-pattern="/^(?=.*[A-Z])[a-zA-Z0-9]{6,16}$/">
+                    <div ng-messages="registerForm.password.$error" multiple>
+                        <div ng-message="required" class="my-message">
+                            Password required
+                        </div>
+                        <div ng-message="pattern" class="my-message">
+                            Password must have 6 to 16 characters and at least 1 capital letter
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Email</label>
+                    <input name="email" required ng-model="email" ng-pattern="/^.+@.+\..+$/">
+                    <div ng-messages="registerForm.email.$error" multiple>
+                        <div ng-message="required" class="my-message">
+                            Email required
+                        </div>
+                        <div ng-message="pattern" class="my-message">
+                            Invalid email
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Phone</label>
+                    <input name="phone" ng-model="phone" ng-pattern="/^[0-9]{9,10}$/" md-maxlength="10">
+                    <div ng-messages="registerForm.phone.$error" multiple>
+                        <div ng-message="pattern" class="my-message">
+                            Invalid phone number
+                        </div>
+                        <div ng-message="md-maxlength" class="my-message">
+                            too long
+                        </div>
+                    </div>
+                </md-input-container>
+
+            </form>
+        </div>
+    </md-content>
+
+</div>
